@@ -1,0 +1,15 @@
+<h1>Businesses for <%= @category.name %></h1>
+
+<%= link_to 'Back to Categories', categories_path %>
+
+<% @businesses.each do |business| %>
+  <div class="business">
+    <h2><%= business.name %></h2>
+    <p>Amount: <%= business.amount %></p>
+  </div>
+<% end %>
+
+<p>Total Amount for <%= @category.name %>: <%= @total_amount %></p>
+
+<%= link_to "Add a New Business", new_category_business_path(category_id: @category.id) %>
+

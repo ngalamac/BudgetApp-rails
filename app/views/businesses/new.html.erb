@@ -1,0 +1,31 @@
+<h1>Add a New Business for <%= @category.name %></h1>
+
+<%= form_with(model: [@category, @business], local: true) do |form| %>
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Business' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Businesses', category_businesses_path(@category) %>

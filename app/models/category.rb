@@ -1,10 +1,13 @@
 class Category < ApplicationRecord
-    has_many :transactions
+    belongs_to :user
+    has_many :businesses, dependent: :destroy
     has_one_attached :icon
   
     validates :name, presence: true
     validates :icon, presence: true
+  
     def total_amount
-        transactions.sum(:amount)
+      businesses.sum(:amount)
     end
-end
+  end
+  

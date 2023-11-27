@@ -1,9 +1,16 @@
+
+  <% if @categories.empty? %>
+    <p>Please add Categories using the Add New Category button</p>
+     <%= link_to "Add a new category", new_category_path %>
+  <% else %>
+
 <% @categories.each do |category| %>
-  <div class="category">
+  <%= link_to category_businesses_path(category), class: "category" do %>
     <h2><%= category.name %></h2>
     <%= image_tag(category.icon, alt: "#{category.name} icon") if category.icon.attached? %>
     <p>Total Amount: <%= category.total_amount %></p>
-    <%= link_to "View Transactions", category_transactions_path(category) %>
     <%= link_to "Add a new category", new_category_path %>
-  </div>
+  <% end %>
+<% end %>
+
 <% end %>

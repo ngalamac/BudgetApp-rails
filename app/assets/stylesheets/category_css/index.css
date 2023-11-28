@@ -132,8 +132,9 @@ button {
     padding: 30px 10px;
     font-size: 1.5rem;
     font-weight: 500;
-    margin-top: 50px;
+    margin-top: 10%;
     width: 100%;
+    margin-bottom:7px;
 }
 
 button a {
@@ -141,4 +142,5 @@ button a {
     color: #CCE6BB;
     border: 1px solid #CCE6BB;
     padding: 10px 70px;
+    position: relative;
 }

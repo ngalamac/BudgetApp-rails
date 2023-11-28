@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+span button {
+    background-color: #60B524;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 30px 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10%;
+    width: 100%;
+    min-width: 300px;
+    margin-bottom:7px;
+    margin-top: 10px;
+}
+
+span button a {
+    cursor: pointer;
+    color: #CCE6BB;
+    border: 1px solid #CCE6BB;
+    padding: 10px 50px;
+}
+
+.back {
+    padding: 5px 6px;
+    background-color: #60B524;
+    width: 70px;
+    margin-left: 10px;
+}
+.back a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 2px;
+    
+}
+.total {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}

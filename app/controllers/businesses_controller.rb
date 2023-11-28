@@ -3,7 +3,17 @@ class BusinessesController < ApplicationController
   before_action :set_category, only: [:index, :new, :create]
 
   def index
-    @businesses = @category.businesses.order(created_at: :desc)
+    sort_by = params[:sort_by]
+
+    case sort_by
+    when 'most_recent'
+      @businesses = @category.businesses.order(created_at: :desc)
+    when 'most_ancient'
+      @businesses = @category.businesses.order(created_at: :asc)
+    else
+      @businesses = @category.businesses # Default sorting or handle other cases
+    end
+
     @total_amount = @category.total_amount
   end
 

@@ -1,15 +1,34 @@
-<h1>Businesses for <%= @category.name %></h1>
-
-<%= link_to 'Back to Categories', categories_path %>
-
-<% @businesses.each do |business| %>
-  <div class="business">
-    <h2><%= business.name %></h2>
-    <p>Amount: <%= business.amount %></p>
+<div class="signup-nav">
+  <div id="top-nav">
+    <%= image_tag("hambuger.jpg", alt: "Hambuger mobile menu", id: "back-arrow") %>
+    <h2>Business</h2>
+    <%= image_tag("search.jpg", alt: "Search mobile icon", id: "") %>
   </div>
+  <div id="toggle">
+  <p><%= link_to 'Most Recent', category_businesses_path(@category, sort_by: 'most_recent') %></p>
+  <p><%= link_to 'Most Ancient', category_businesses_path(@category, sort_by: 'most_ancient') %></p>
+</div>
+
+</div>
+
+<button class = "back"><%= link_to 'Back', categories_path %></button>
+
+
+<p class = "total">Total Amount: $<%= @total_amount %></p>
+
+<ul class= "category-list">
+<% @businesses.each do |business| %>
+  <li class= "category">
+    <%= link_to category_businesses_path(@category, business) do %>
+      <span>
+        <%= image_tag(@category.icon, alt: "#{business.name} icon") if @category.icon.attached? %>
+        <p class = "name"><%= business.name %></p>
+        <p class = "amt">$<%= business.amount %></p>
+      </span>
+    <% end %>
+    </li>
+  </ul>
 <% end %>
+<span><button><%= link_to "New Business", new_category_business_path(category_id: @category.id) %></button></span>
 
-<p>Total Amount for <%= @category.name %>: <%= @total_amount %></p>
-
-<%= link_to "Add a New Business", new_category_business_path(category_id: @category.id) %>
 

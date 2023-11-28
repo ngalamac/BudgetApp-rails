@@ -1,26 +1,38 @@
-<h2>Log in</h2>
+<div class="signup-nav">
+  <%= image_tag("back-arrow.jpg", alt: "Back Arrow", id: "back-arrow") %>
+  <h2>Log In</h2>
+  <p id="next-button">Next</p>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' }) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password"%>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
+<p class = "login-interface">No account yet?
+<%= render "devise/shared/links" %></p>
 
-<%= render "devise/shared/links" %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var nextButton = document.getElementById('next-button');
+    var loginForm = document.getElementById('login-form');
+    var backArrow = document.getElementById('back-arrow');
+
+    nextButton.addEventListener('click', function() {
+      loginForm.submit();
+    });
+
+    backArrow.addEventListener('click', function() {
+      // Navigate back to the splash screen
+      window.location.href = '/';
+    });
+  });
+</script>

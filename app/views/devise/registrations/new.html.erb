@@ -1,29 +1,46 @@
-<h2>Sign up</h2>
+<div class="signup-nav">
+  <%= image_tag("back-arrow.jpg", alt: "Back Arrow", id: "back-arrow") %>
+  <h2>Sign Up</h2>
+  <p id="next-button">Next</p>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: 'signup-form' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password"%>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  
 <% end %>
+<p class= "login-interface">Aready have an account?  <%= render "devise/shared/links" %></p>
 
-<%= render "devise/shared/links" %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var nextButton = document.getElementById('next-button');
+    var signUpForm = document.getElementById('signup-form');
+    var backArrow = document.getElementById('back-arrow');
+
+    nextButton.addEventListener('click', function() {
+      signUpForm.submit();
+    });
+
+    backArrow.addEventListener('click', function() {
+      // Navigate back to the splash screen 
+      window.location.href = '/';
+    });
+  });
+</script>

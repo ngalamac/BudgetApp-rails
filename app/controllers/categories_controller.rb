@@ -3,6 +3,9 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = current_user.categories
+
+    # Sort categories based on the sort_by parameter
+    @categories = sort_categories(params[:sort_by]) if params[:sort_by].present?
   end
 
   def show
@@ -34,6 +37,17 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def sort_categories(sort_by)
+    case sort_by
+    when 'most_recent'
+      @categories.order(created_at: :desc)
+    when 'most_ancient'
+      @categories.order(created_at: :asc)
+    else
+      @categories
+    end
+  end
 
   def category_params
     params.require(:category).permit(:name, :icon)

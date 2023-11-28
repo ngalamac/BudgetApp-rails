@@ -1,7 +1,7 @@
 <%= form_with(model: category, local: true) do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Name" %>
   </div>
 
   <div class="field">

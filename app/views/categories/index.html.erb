@@ -1,16 +1,31 @@
+<div class="signup-nav">
+  <div id="top-nav">
+    <%= image_tag("hambuger.jpg", alt: "Hambuger mobile menu", id: "back-arrow") %>
+    <h2>Categories</h2>
+    <%= image_tag("search.jpg", alt: "Search mobile icon", id: "") %>
+  </div>
+  <div id="toggle">
+    <p><%= link_to 'Most Recent', categories_path(sort_by: 'most_recent') %></p>
+    <p><%= link_to 'Most Ancient', categories_path(sort_by: 'most_ancient') %></p>
+  </div>
+</div>
 
-  <% if @categories.empty? %>
-    <p>Please add Categories using the Add New Category button</p>
-     <%= link_to "Add a new category", new_category_path %>
-  <% else %>
-
-<% @categories.each do |category| %>
-  <%= link_to category_businesses_path(category), class: "category" do %>
-    <h2><%= category.name %></h2>
-    <%= image_tag(category.icon, alt: "#{category.name} icon") if category.icon.attached? %>
-    <p>Total Amount: <%= category.total_amount %></p>
-    <%= link_to "Add a new category", new_category_path %>
-  <% end %>
+<% if @categories.empty? %>
+  <p>Please add categories using the Add New Category button</p>
+  <%= link_to "Add a new category", new_category_path %>
+<% else %>
+  <ul class="category-list">
+    <% @categories.each do |category| %>
+      <li class="category">
+        <%= link_to category_businesses_path(category) do %>
+          <span>
+            <%= image_tag(category.icon, alt: "#{category.name} icon") if category.icon.attached? %>
+            <p class="name"><%= category.name %></p>
+            <p class="amt">$<%= category.total_amount %></p>
+          </span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
-
-<% end %>
+<button><%= link_to "Add a new category", new_category_path %></button>

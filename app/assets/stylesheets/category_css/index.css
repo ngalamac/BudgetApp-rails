@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 242, 241);
+}
+
+.signup-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #2E67A8;
+}
+
+.signup-nav #top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: auto;
+    background-color: #2E67A8;
+    width: 100%;
+}
+
+.signup-nav #toggle {
+    display: flex;
+    margin-left: 50%;
+    padding: 10px 0;
+    gap: 5px;
+    background-color: #2E67A8;
+}
+
+#toggle p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: end;
+    text-wrap: nowrap;
+}
+
+#toggle p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#toggle p a {
+    font-size: 1rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#toggle p a.active {
+    text-decoration: underline;
+    text-underline-offset: 2px; /* Adjust as needed */
+    &:after {
+        content: "•"; /* Unicode bullet character */
+        color: #fff; /* Color of the bullet */
+        margin-left: 5px; /* Adjust as needed */
+    }
+}
+
+.signup-nav img {
+    width: 30px;
+    height: auto;
+    border: none;
+    background-color: #306AAA;
+    border-radius: 3px;
+}
+
+.signup-nav h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.signup-nav p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 5px;
+    background-color: #FDFDFD;
+    border-radius: 3px;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 3px;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: #B6B6B6;
+    width: 100%;
+    text-wrap: wrap;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.amt {
+    font-size: 1.5rem;
+    color: #434A54;
+    font-weight: 700;
+}
+
+button {
+    background-color: #60B524;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 30px 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 50px;
+    width: 100%;
+}
+
+button a {
+    cursor: pointer;
+    color: #CCE6BB;
+    border: 1px solid #CCE6BB;
+    padding: 10px 70px;
+}

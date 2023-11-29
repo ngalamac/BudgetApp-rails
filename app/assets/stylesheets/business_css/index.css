@@ -15,11 +15,11 @@ span button {
     padding: 30px 15px;
     font-size: 1.5rem;
     font-weight: 500;
-    margin-top: 10%;
     width: 100%;
-    min-width: 300px;
     margin-bottom:7px;
-    margin-top: 10px;
+    margin-top: 10%;
+   position: fixed;
+   bottom: 0;
 }
 
 span button a {
@@ -32,8 +32,8 @@ span button a {
 .back {
     padding: 5px 6px;
     background-color: #60B524;
-    width: 70px;
-    margin-left: 10px;
+    max-width: 50px;
+    margin: 10px;
 }
 .back a {
     color: #fff;
@@ -41,9 +41,18 @@ span button a {
     font-weight: 400;
     text-decoration: none;
     padding: 2px;
+    border: 1px solid #fff;
     
 }
 .total {
     margin-left: 10px;
     font-size: 1.5rem;
+}
+#heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #434A54;
+    margin: 15px 10px;
+    text-align: center;
+    font-weight: 600;
 }

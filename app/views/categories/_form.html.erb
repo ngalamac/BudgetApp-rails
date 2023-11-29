@@ -4,12 +4,13 @@
     <%= form.text_field :name, placeholder: "Name" %>
   </div>
 
-  <div class="field">
+  <div class="field" id= "icons">
+  <p id ="icon">Icon</p>
     <%= form.label :icon %>
     <%= form.file_field :icon %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+   <button id = "save"><%= form.submit 'Save'%></button>
   </div>
 <% end %>

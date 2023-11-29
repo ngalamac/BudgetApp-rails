@@ -8,10 +8,8 @@
   <p><%= link_to 'Most Recent', category_businesses_path(@category, sort_by: 'most_recent') %></p>
   <p><%= link_to 'Most Ancient', category_businesses_path(@category, sort_by: 'most_ancient') %></p>
 </div>
-
 </div>
-
-<button class = "back"><%= link_to 'Back', categories_path %></button>
+<h3 class = "back"><%= link_to 'Back', categories_path %></h3>
 
 
 <p class = "total">Total Amount: $<%= @total_amount %></p>

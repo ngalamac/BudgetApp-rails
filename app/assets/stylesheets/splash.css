@@ -17,6 +17,7 @@ body{
 }
 .splash-container h1{
   font-size: 2rem;
+  font-family: al;
   font-weight: 700;
   color: rgb(66,76,83);
   margin-top: 10rem;

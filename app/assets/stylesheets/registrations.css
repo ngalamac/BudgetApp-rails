@@ -6,26 +6,26 @@
 body{
     background-color: rgb(240,242,241);
 }
-.signup-nav{
+.signup-nav,.signupm-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px 5% 10px 5%;
     background-color:#2E67A8;
 }
-.signup-nav img{
+.signup-nav img,.signupm-nav img{
     width: 30px;
     height: auto;
     border: none;
     background-color: #306AAA;
     border-radius: 30px;
 }
-.signup-nav h2{
+.signup-nav h2,.signupm-nav h2{
     font-size: 1.5rem;
     font-weight: 400;
     color: #fff;
 }
-.signup-nav p{
+.signup-nav p,.signupm-nav p{
     font-size: 1.5rem;
     font-weight: 400;
     color: #fff;
@@ -53,7 +53,9 @@ input{
     border-radius: 4px;
 }
 ::placeholder{
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-left: 8px;
+    color: #B6B6B6;
 }
 .login-interface {
     margin-top: 100px;

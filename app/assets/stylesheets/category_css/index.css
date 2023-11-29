@@ -135,6 +135,9 @@ button {
     margin-top: 10%;
     width: 100%;
     margin-bottom:7px;
+    left: 0;
+   position: fixed;
+   bottom: 0;
 }
 
 button a {
@@ -143,4 +146,34 @@ button a {
     border: 1px solid #CCE6BB;
     padding: 10px 70px;
     position: relative;
+}
+#save{
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+#save input{
+    width: 100%;
+    left: 0;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+#icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+#icon{
+    font-size: 1.5rem;
+    margin-left: 8px;
+    color: #B6B6B6;
+}
+#error{
+    text-align: center;
+    color: slategrey;
+    font-size: 1.5rem;
+    margin: 150px 10px;
 }

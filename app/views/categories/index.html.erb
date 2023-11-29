@@ -9,10 +9,10 @@
     <p><%= link_to 'Most Ancient', categories_path(sort_by: 'most_ancient') %></p>
   </div>
 </div>
+<h3 class = "back"><%= link_to 'Back', root_path %></h3>
 
 <% if @categories.empty? %>
-  <p>Please add categories using the Add New Category button</p>
-  <%= link_to "Add a new category", new_category_path %>
+  <p id = "error">You don't have any categories in your list yet.Please Add...</p>
 <% else %>
   <ul class="category-list">
     <% @categories.each do |category| %>
@@ -29,3 +29,4 @@
   </ul>
 <% end %>
 <button><%= link_to "New category", new_category_path %></button>
+

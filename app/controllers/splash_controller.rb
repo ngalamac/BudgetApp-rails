@@ -1,5 +1,3 @@
 class SplashController < ApplicationController
-    def splash
-    end
-  end
-  
+  def splash; end
+end

@@ -3,7 +3,7 @@
   <h2>New Business</h2>
   <p id="next-button">Next</p>
 </div>
-<h3 class = "back"><%= link_to 'Back', category_businesses_path(@category) %></h3>
+<h3 class = "back"><%= link_to 'Back', category_businesses_path(@category) %></h3> 
 <h1 id = "heading">For <%= @category.name %> Category</h1>
 <%= form_with(model: [@category, @business], local: true) do |form| %>
   <% if @business.errors.any? %>
@@ -32,3 +32,15 @@
    <button id = "save"><%= form.submit 'Save' %></button>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById("back-arrow");
+
+    if (backButton) {
+      backButton.addEventListener("click", function() {
+        window.location.href = "<%= category_businesses_path(@category) %>";
+      });
+    }
+  });
+</script>

@@ -6,13 +6,12 @@ class BusinessesController < ApplicationController
     sort_by = params[:sort_by]
 
     @businesses = case sort_by
-                  when 'most_recent'
-                    @category.businesses.order(created_at: :desc)
                   when 'most_ancient'
                     @category.businesses.order(created_at: :asc)
                   else
-                    @category.businesses # Default sorting or handle other cases
+                    @category.businesses.order(created_at: :desc)
                   end
+
 
     @total_amount = @category.total_amount
   end

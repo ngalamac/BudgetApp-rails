@@ -30,3 +30,15 @@
 <% end %>
 <button><%= link_to "New category", new_category_path %></button>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById("back-arrow");
+
+    if (backButton) {
+      backButton.addEventListener("click", function() {
+        window.location.href = "<%= root_path %>";
+      });
+    }
+  });
+</script>
+

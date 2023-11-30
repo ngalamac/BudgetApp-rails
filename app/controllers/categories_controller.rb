@@ -40,12 +40,10 @@ class CategoriesController < ApplicationController
 
   def sort_categories(sort_by)
     case sort_by
-    when 'most_recent'
-      @categories.order(created_at: :desc)
     when 'most_ancient'
       @categories.order(created_at: :asc)
     else
-      @categories
+      @categories.order(created_at: :desc)
     end
   end
 

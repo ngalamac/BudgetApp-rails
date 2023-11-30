@@ -43,7 +43,7 @@ Ruby on Rails, Visual Studia Code, WSL,CSS, HTML, PostgreSQL, Rspec, Capybara, R
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://ngala-budgetapp.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

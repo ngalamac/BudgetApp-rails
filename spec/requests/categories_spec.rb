@@ -17,7 +17,7 @@ RSpec.describe 'CategoriesController', type: :request do
 
   describe 'GET /categories/:id' do
     it 'returns a successful response' do
-      category = FactoryBot.create(:category, user: user)
+      category = FactoryBot.create(:category, user:)
       get "/categories/#{category.id}"
 
       expect(response).to have_http_status(:ok)

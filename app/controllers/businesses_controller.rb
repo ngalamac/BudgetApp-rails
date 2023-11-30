@@ -12,7 +12,6 @@ class BusinessesController < ApplicationController
                     @category.businesses.order(created_at: :desc)
                   end
 
-
     @total_amount = @category.total_amount
   end
 

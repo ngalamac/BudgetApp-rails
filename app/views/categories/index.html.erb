@@ -1,0 +1,44 @@
+<div class="signup-nav">
+  <div id="top-nav">
+    <%= image_tag("hambuger.jpg", alt: "Hambuger mobile menu", id: "back-arrow") %>
+    <h2>Categories</h2>
+    <%= image_tag("search.jpg", alt: "Search mobile icon", id: "") %>
+  </div>
+  <div id="toggle">
+    <p><%= link_to 'Most Recent', categories_path(sort_by: 'most_recent') %></p>
+    <p><%= link_to 'Most Ancient', categories_path(sort_by: 'most_ancient') %></p>
+  </div>
+</div>
+<h3 class = "back"><%= link_to 'Back', root_path %></h3>
+
+<% if @categories.empty? %>
+  <p id = "error">You don't have any categories in your list yet.Please Add...</p>
+<% else %>
+  <ul class="category-list">
+    <% @categories.each do |category| %>
+      <li class="category">
+        <%= link_to category_businesses_path(category) do %>
+          <span>
+            <%= image_tag(category.icon, alt: "#{category.name} icon") if category.icon.attached? %>
+            <p class="name"><%= category.name %></p>
+            <p class="amt">$<%= category.total_amount %></p>
+          </span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<button><%= link_to "New category", new_category_path %></button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById("back-arrow");
+
+    if (backButton) {
+      backButton.addEventListener("click", function() {
+        window.location.href = "<%= root_path %>";
+      });
+    }
+  });
+</script>
+

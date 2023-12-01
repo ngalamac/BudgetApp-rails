@@ -1,0 +1,16 @@
+<%= form_with(model: category, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: "Name" %>
+  </div>
+
+  <div class="field" id= "icons">
+  <p id ="icon">Icon</p>
+    <%= form.label :icon %>
+    <%= form.file_field :icon %>
+  </div>
+
+  <div class="actions">
+   <button id = "save"><%= form.submit 'Save'%></button>
+  </div>
+<% end %>

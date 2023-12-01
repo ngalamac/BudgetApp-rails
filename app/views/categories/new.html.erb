@@ -1,0 +1,10 @@
+<div class="signupm-nav">
+  <%= image_tag("back-arrow.jpg", alt: "Back Arrow", id: "back-arrow") %>
+  <h2>New Cattegory</h2>
+  <p id="next-button">Next</p>
+</div>
+
+<h3 class = "back"><%= link_to 'Back', categories_path %></h3>
+<%= render 'form', category: @category %>
+
+

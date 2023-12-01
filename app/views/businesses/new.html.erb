@@ -1,0 +1,46 @@
+<div class="signupm-nav">
+  <%= image_tag("back-arrow.jpg", alt: "Back Arrow", id: "back-arrow") %>
+  <h2>New Business</h2>
+  <p id="next-button">Next</p>
+</div>
+<h3 class = "back"><%= link_to 'Back', category_businesses_path(@category) %></h3> 
+<h1 id = "heading">For <%= @category.name %> Category</h1>
+<%= form_with(model: [@category, @business], local: true) do |form| %>
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true, placeholder: "Name"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, required: true, placeholder: "Amount"%>
+  </div>
+
+  <div class="actions">
+   <button id = "save"><%= form.submit 'Save' %></button>
+  </div>
+<% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById("back-arrow");
+
+    if (backButton) {
+      backButton.addEventListener("click", function() {
+        window.location.href = "<%= category_businesses_path(@category) %>";
+      });
+    }
+  });
+</script>

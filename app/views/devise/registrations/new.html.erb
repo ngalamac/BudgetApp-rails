@@ -1,0 +1,50 @@
+<div class="signupm-nav">
+  <%= image_tag("back-arrow.jpg", alt: "Back Arrow", id: "back-arrow") %>
+  <h2>Sign Up</h2>
+  <p id="next-button">Next</p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: 'signup-form' }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true, placeholder: "Full Name" ,required: true%>
+</div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password",  required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password",  required: true%>
+  </div>
+  
+<% end %>
+<p class= "login-interface">Aready have an account?  <%= render "devise/shared/links" %></p>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var nextButton = document.getElementById('next-button');
+    var signUpForm = document.getElementById('signup-form');
+    var backArrow = document.getElementById('back-arrow');
+
+    nextButton.addEventListener('click', function() {
+      signUpForm.submit();
+    });
+
+    backArrow.addEventListener('click', function() {
+      window.location.href = '/';
+    });
+  });
+</script>
